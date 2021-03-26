@@ -11,8 +11,10 @@ class QDMGraphicsView(QGraphicsView):
         self.setScene(self.grScene)
 
     def initUI(self):
+        #smooths out objects
         self.setRenderHints(QPainter.Antialiasing | QPainter.HighQualityAntialiasing | QPainter.TextAntialiasing | QPainter.SmoothPixmapTransform)
 
+        #fixes issue when moving items around background is cached and not changed
         self.setViewportUpdateMode(QGraphicsView.FullViewportUpdate)
 
         self.setHorizontalScrollBarPolicy(Qt.ScrollBarAlwaysOff)
